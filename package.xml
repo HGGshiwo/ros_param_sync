@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_param_sync</name>
+  <version>1.0.0</version>
+  <description>Reusable, modern C++ header-only library for bidirectional ROS parameter synchronization and atomic disk persistence.</description>
+
+  <maintainer email="hggshiwo@todo.todo">hggshiwo</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+
+  <export>
+  </export>
+</package>
