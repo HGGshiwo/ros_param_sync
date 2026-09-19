@@ -49,7 +49,7 @@ public:
    */
   template <typename T>
   void bind(const std::string &name, T &ref,
-            std::function<void(const T &)> on_change = nullptr) {
+            detail::type_identity_t<std::function<void(const T &)>> on_change = nullptr) {
     std::lock_guard<std::mutex> lock(mutex_);
     entries_.push_back(std::make_unique<detail::TypedParamEntry<T>>(
         name, ref, on_change));
@@ -60,7 +60,7 @@ public:
    */
   template <typename T>
   void bind_with_default(const std::string &name, T &ref, const T &default_val,
-                         std::function<void(const T &)> on_change = nullptr) {
+                         detail::type_identity_t<std::function<void(const T &)>> on_change = nullptr) {
     std::lock_guard<std::mutex> lock(mutex_);
     entries_.push_back(std::make_unique<detail::TypedParamEntry<T>>(
         name, ref, default_val, on_change));
